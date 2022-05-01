@@ -34,6 +34,7 @@ DEBUG = True
 ALLOWED_HOSTS = []
 
 
+
 # Application definition
 
 INSTALLED_APPS = [
@@ -43,6 +44,8 @@ INSTALLED_APPS = [
     'django.contrib.sessions',
     'django.contrib.messages',
     'django.contrib.staticfiles',
+    'load_googlesheet.apps.LoadGooglesheetConfig',
+    'gsheets',
 ]
 
 MIDDLEWARE = [
@@ -127,3 +130,7 @@ STATIC_URL = 'static/'
 # https://docs.djangoproject.com/en/4.0/ref/settings/#default-auto-field
 
 DEFAULT_AUTO_FIELD = 'django.db.models.BigAutoField'
+
+GSHEETS = {
+    'CLIENT_SECRETS': os.getenv("GOOGLE_KEY")
+}
